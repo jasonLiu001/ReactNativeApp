@@ -6,7 +6,7 @@
 
 import React, {Component} from 'react';
 import {
-    Button,
+    TouchableOpacity,
     Platform,
     StyleSheet,
     Text,
@@ -25,9 +25,15 @@ export default class App extends Component<Props> {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={{color: '#b72a2a', fontSize: 23}}>恭喜!</Text>
-                <Text style={{color: '#b72a2a', fontSize: 23}}>环境配置成功!</Text>
-                <Text>{instructions}</Text>
+                <TouchableOpacity style={styles.btnTable}>
+                    <Text>表1</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btnTable}>
+                    <Text>表2</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btnTable}>
+                    <Text>表3</Text>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -37,7 +43,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
-        alignContent: 'center'
+        alignItems: 'center'
+    },
+    btnTable: {
+        padding: 8,
+        marginTop: 10,
+        backgroundColor: '#1cdaff',
+        width: 80
     }
 });
