@@ -13,14 +13,17 @@ type Props = {};
  */
 export default class IndexView extends Component<Props> {
     static navigationOptions = {
-        title: '首页',
+        title: '首页'
     };
 
     render() {
         return (
             <View style={styles.container}>
-                <Button title="About Me"
+                <Button title="导航到下一个页面"
                         onPress={() => this.props.navigation.navigate('About')}></Button>
+                <Button title="当前页打开Modal页" onPress={() => {
+                    this.props.navigation.navigate('Modal')
+                }}/>
             </View>
         );
     }
@@ -29,14 +32,14 @@ export default class IndexView extends Component<Props> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         paddingLeft: 10,
         paddingRight: 10
     },
     tipText: {
         backgroundColor: '#67a7ff'
     },
-    btnStyle: {
-        width: 400
+    headerLeftBtnStyle: {
+        color: '#e926ff'
     }
 });
