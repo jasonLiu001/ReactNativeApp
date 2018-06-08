@@ -11,7 +11,7 @@ type Props = {};
  *
  * App首页
  */
-export default class IndexView extends Component<Props> {
+export default class IndexScreen extends Component<Props> {
     static navigationOptions = {
         title: '首页'
     };

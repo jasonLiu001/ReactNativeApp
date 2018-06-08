@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import {createStackNavigator} from 'react-navigation';
-import IndexView from "./src/views/Index";
-import AboutView from "./src/views/About";
-import ModalView from "./src/components/Modal";
+import IndexScreen from "./src/views/Index";
+import AboutScreen from "./src/views/About";
+import ModalScreen from "./src/components/Modal";
 
 const MainStack = createStackNavigator({
         Index: {
-            screen: IndexView
+            screen: IndexScreen
         },
         About: {
-            screen: AboutView
+            screen: AboutScreen
         },
     },
     {
-        initialRouteName: 'Index',
+        initialRouteName: 'Index'
     });
 
 /**
@@ -25,7 +25,7 @@ const RootStack = createStackNavigator({
             screen: MainStack
         },
         Modal: {
-            screen: ModalView
+            screen: ModalScreen
         }
     },
     {

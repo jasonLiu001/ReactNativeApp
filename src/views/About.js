@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 type Props = {};
-export default class AboutView extends Component<Props> {
+export default class AboutScreen extends Component<Props> {
     static navigationOptions = {
         title: '关于页',
     };
@@ -15,7 +15,7 @@ export default class AboutView extends Component<Props> {
     render() {
         return (
             <View style={styles.container}>
-                <Button title="返回" onPress={() => this.props.navigation.navigate('Index')}></Button>
+                <Button title="返回首页" onPress={() => this.props.navigation.navigate('Index')}></Button>
             </View>
         );
     }

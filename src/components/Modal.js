@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 type Props = {};
-export default class ModalView extends Component<Props> {
+export default class ModalScreen extends Component<Props> {
     render() {
         return (
             <View style={styles.container}>
