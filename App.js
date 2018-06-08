@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     btnTable: {
         padding: 8,
         marginTop: 10,
-        backgroundColor: '#1cdaff',
-        width: 80
+        backgroundColor: '#79fdff',
+        width: 400
     },
     btnText: {
         textAlign: 'center'
