@@ -1,6 +1,4 @@
 import {AppRegistry} from 'react-native';
-// import App from './App';
-import IndexView from './src/views/Index';
+import StackNavigatorApp from './app.stack.navigator';
 
-// AppRegistry.registerComponent('ReactNativeApp', () => App);
-AppRegistry.registerComponent('ReactNativeApp', () => IndexView);
+AppRegistry.registerComponent('ReactNativeApp', () => StackNavigatorApp);
