@@ -2,21 +2,32 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     View,
-    Text
+    Text,
+    Button
 } from 'react-native';
 
 type Props = {};
 export default class AboutView extends Component<Props> {
+    static navigationOptions = {
+        title: '关于页',
+    };
+
     render() {
         return (
-            <View>
-                <Text style={styles.tipText}>关于</Text>
+            <View style={styles.container}>
+                <Button title="返回" onPress={() => this.props.navigation.navigate('Index')}></Button>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        paddingLeft: 10,
+        paddingRight: 10
+    },
     tipText: {
         backgroundColor: '#67a7ff'
     }

@@ -12,18 +12,27 @@ type Props = {};
  * App首页
  */
 export default class IndexView extends Component<Props> {
+    static navigationOptions = {
+        title: '首页',
+    };
+
     render() {
         return (
-            <View>
+            <View style={styles.container}>
                 <Button title="About Me"
                         onPress={() => this.props.navigation.navigate('About')}></Button>
-                <Text style={styles.tipText}>首页</Text>
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        paddingLeft: 10,
+        paddingRight: 10
+    },
     tipText: {
         backgroundColor: '#67a7ff'
     },
