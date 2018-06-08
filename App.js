@@ -26,13 +26,13 @@ export default class App extends Component<Props> {
         return (
             <View style={styles.container}>
                 <TouchableOpacity style={styles.btnTable}>
-                    <Text>表1</Text>
+                    <Text style={styles.btnText}>表1</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btnTable}>
-                    <Text>表2</Text>
+                    <Text style={styles.btnText}>表2</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.btnTable}>
-                    <Text>表3</Text>
+                    <Text style={styles.btnText}>表3</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -50,5 +50,8 @@ const styles = StyleSheet.create({
         marginTop: 10,
         backgroundColor: '#1cdaff',
         width: 80
+    },
+    btnText: {
+        textAlign: 'center'
     }
 });
