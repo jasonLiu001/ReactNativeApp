@@ -4,7 +4,8 @@ import {
     View,
     SectionList,
     StyleSheet,
-    Dimensions
+    Dimensions,
+    Image
 } from 'react-native';
 
 type Props = {};
@@ -14,17 +15,34 @@ export default class FieldsSelectionScreen extends Component<Props> {
         title: '表1'
     };
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            isChecked: false,
+            selectMap: new Map()
+        };
+    }
+
+    componentDidMount() {
+
+    }
+
     _renderItem(info) {
+        let isChecked = false;
+
         return (
-            <View>
-                <Text key={info.item.title}>{info.item.name}</Text>
-                <Text>{info.item.phone}</Text>
+            <View style={styles.selectionListItem}>
+                <Image style={{borderColor: ''}}
+                       source={isChecked ? require("../images/icon_box-checked.png") :
+                           require("../images/icon_box-empty.png")}/>
+                <Text style={{borderColor: ''}} key={info.item.title}>{info.item.name}</Text>
             </View>
         )
     }
 
     _renderSectionHeader(info) {
-        let txt = '第' + info.section.key + '部分';
+        let txt = 'section' + info.section.key + '头部';
         return (
             <View><Text key={info.section.key} style={{
                 width: dimension.width,
@@ -50,32 +68,29 @@ export default class FieldsSelectionScreen extends Component<Props> {
 
     _listHeaderComponent() {
         return (
-            <View style={{backgroundColor: 'yellow', alignItems: 'center'}}><Text>SectionList简易通讯录</Text></View>
+            <View style={{backgroundColor: 'yellow'}}><Text>选择查询字段</Text></View>
         )
     }
 
     _listFooterComponent() {
         return (
-            <View style={{backgroundColor: 'red', alignItems: 'center'}}><Text>SectionList简易通讯录尾部</Text></View>
+            <View style={{backgroundColor: 'red', alignItems: 'center'}}><Text>已加载全部</Text></View>
         )
     }
 
     render() {
         const sections = [];
 
-        for (let i = 0; i < 10; i++) {
-            let datas = [];
+        for (let i = 0; i < 2; i++) {
+            let data = [];
             for (let j = 0; j < 10; j++) {
-                datas.push(
+                data.push(
                     {
-                        name: '用户' + i + j,
-                        phone: '01234567890'
+                        name: '字段' + i + j
                     }
                 );
             }
-
-            sections.push({key: i, data: datas});
-
+            sections.push({key: i, data: data});
         }
 
         return (
@@ -86,12 +101,12 @@ export default class FieldsSelectionScreen extends Component<Props> {
                     sections={sections}
                     refreshing={false}
                     onRefresh={() => {
-                        alert("刷新")
+                        //alert("刷新");
                     }}
                     ItemSeparatorComponent={this._itemSeparatorComponent}
                     SectionSeparatorComponent={this._sectionSeparatorComponent}
                     onEndReached={(info) => {
-                        alert("到达底部")
+                        //alert("到达底部")
                     }}
                     onEndReachedThreshold={0}
                     stickySectionHeadersEnabled={true}
@@ -106,8 +121,11 @@ export default class FieldsSelectionScreen extends Component<Props> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'flex-start',
+        alignItems: 'center',
         paddingLeft: 10,
         paddingRight: 10
+    },
+    selectionListItem: {
+        flexDirection: 'row'
     }
 });
