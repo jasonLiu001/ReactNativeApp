@@ -1,14 +1,30 @@
 import React, {Component} from 'react';
-import {createBottomTabNavigator} from 'react-navigation';
+import {
+    createBottomTabNavigator,
+    createStackNavigator
+} from 'react-navigation';
 import IndexScreen from "./src/views/Index";
 import AboutScreen from "./src/views/About";
+import ModalScreen from "./src/components/Modal";
 
-const RootNavigation = createBottomTabNavigator({
+const HomeStack = createStackNavigator({
         Index: IndexScreen,
-        About: AboutScreen
+        Modal: ModalScreen
     },
     {
-        initialRouteName: 'Index'
+        mode: 'modal'
+    });
+
+const AboutStack = createStackNavigator({
+    About: AboutScreen
+});
+
+const RootBottomTabNavigation = createBottomTabNavigator({
+        Home: HomeStack,
+        About: AboutStack
+    },
+    {
+        initialRouteName: 'Home'
     },
     {
         tabBarOptions: {
@@ -21,7 +37,7 @@ type Props = {};
 export default class TabNavigationApp extends Component<Props> {
     render() {
         return (
-            <RootNavigation/>
+            <RootBottomTabNavigation/>
         );
     }
 }
