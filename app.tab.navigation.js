@@ -6,9 +6,11 @@ import {
 import IndexScreen from "./src/views/Index";
 import AboutScreen from "./src/views/About";
 import ModalScreen from "./src/components/Modal";
+import FieldsSelectionScreen from "./src/views/FieldsSelection";
 
 const HomeStack = createStackNavigator({
         Index: IndexScreen,
+        FieldsSelection: FieldsSelectionScreen,
         Modal: ModalScreen
     },
     {

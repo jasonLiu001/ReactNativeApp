@@ -19,8 +19,8 @@ export default class IndexScreen extends Component<Props> {
     render() {
         return (
             <View style={styles.container}>
-                <Button title="打开关于页面"
-                        onPress={() => this.props.navigation.navigate('About')}></Button>
+                <Button title="表1"
+                        onPress={() => this.props.navigation.navigate('FieldsSelection')}></Button>
                 <Button title="当前页打开Modal页" onPress={() => {
                     this.props.navigation.navigate('Modal')
                 }}/>
