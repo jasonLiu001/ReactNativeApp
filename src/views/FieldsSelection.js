@@ -5,7 +5,8 @@ import {
     SectionList,
     StyleSheet,
     Dimensions,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 
 type Props = {};
@@ -32,11 +33,15 @@ export default class FieldsSelectionScreen extends Component<Props> {
         let isChecked = false;
 
         return (
-            <View style={styles.selectionListItem}>
-                <Image style={{borderColor: ''}}
-                       source={isChecked ? require("../images/icon_box-checked.png") :
-                           require("../images/icon_box-empty.png")}/>
-                <Text style={{borderColor: ''}} key={info.item.title}>{info.item.name}</Text>
+            <View>
+                <TouchableOpacity style={styles.selectionListItem} onPress={() => {
+                    alert('ok!')
+                }}>
+                    <Image style={{borderColor: ''}}
+                           source={isChecked ? require("../images/icon_box-checked.png") :
+                               require("../images/icon_box-empty.png")}/>
+                    <Text style={{borderColor: ''}} key={info.item.title}>{info.item.name}</Text>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -126,6 +131,7 @@ const styles = StyleSheet.create({
         paddingRight: 10
     },
     selectionListItem: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'center'
     }
 });
